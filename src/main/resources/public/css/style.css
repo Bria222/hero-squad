@@ -1,0 +1,515 @@
+@import url('https://fonts.googleapis.com/css?family=Abel&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.2s ease-out;
+  font-family: 'Abel', sans-serif;
+}
+a{
+  text-decoration: none;
+	color: inherit;
+	display: inline-block;
+}
+.btns{
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 5px 20px;
+  font-family: 'Abel', sans-serif;
+  border-radius: 20px;
+  margin-top: 5px;
+
+}
+.btns:hover{
+  background: rgb(0, 0, 0);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.24);
+  color: white;
+}
+.btn-green{
+	background: green;
+	margin-top: 5px;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+/*------------------------------------
+			SCROLL BAR
+---------------------------------------*/
+body::-webkit-scrollbar,
+ #newMember::-webkit-scrollbar{
+  width: 5px;
+  background-color: rgb(119, 119, 117);
+}
+body::-webkit-scrollbar-thumb,
+ #newMember::-webkit-scrollbar-thumb{
+  background-color: rgb(48, 116, 52);
+  border-radius: 30px;
+}
+
+header{
+  position: absolute;
+  top: 0px;
+  z-index: 100;
+  width: 100%;
+
+}
+.nav-hr{
+  border: 0.3px solid rgb(48, 116, 52);
+  box-shadow: 0 0 5px rgb(115, 124, 110);
+  position: absolute;
+  width: 100%;
+  top: 45px;
+}
+header img{
+  height: 90px;
+  position: relative;
+}
+
+nav{
+  position: absolute;
+  top: 23px;
+  right: 10%;
+  font-family: 'Abel', sans-serif;
+  background: rgb(8, 22, 8);
+}
+nav>ul li{
+  display: inline-block;
+  padding: 10px 30px;
+  font-size: 1em;
+  color: white;
+  cursor: pointer;
+}
+.landing-pg{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 15vh;
+  min-height: 10vh;
+  background: rgb(8, 22, 8);
+  color: white;
+  box-shadow: 0 0 10px rgba(255,255,255,0.4);
+}
+.landing-pg h2{
+  z-index: 10;
+	text-align: center;
+	padding: 40px 0;
+}
+.landing-pg h2 a{
+	background: green;
+	color: white;
+	border-radius: 20px;
+}
+.land-left,
+.land-right{
+  position: fixed;
+  right: 0px;
+  top: 0vh;
+  width: 50%;
+  height: 100vh;
+  background: rgb(8, 22, 8);
+  z-index: 2;
+}
+.land-left{
+  left: 0px;
+  background: rgb(0, 0, 0);
+}
+.hero-img{
+  position: relative;
+  z-index: 10;
+  width: 40%;
+  left: 0px;
+  margin-top: 5vh;
+  height: 70vh;
+  overflow: hidden;
+  background: url('/img/arrow_1.jpg');
+  background-position: top center;
+  box-shadow: 0 0 20px rgb(24, 44, 13);
+  animation: load1 0.8s linear 1;
+}
+.hero-desc{
+  width: 40%;
+  height: 60vh;
+  margin-top: 10vh;
+  margin-left: -100px;
+  position: relative;
+  z-index: 10;
+  left: 0px;
+  color: white;
+  padding-top: 20px;
+  background: rgba(0, 0, 0, 0.527);
+  text-align: center;
+  animation: load 1s linear 1;
+}
+.hero-desc>h3{
+  font-size: 3.4em;
+  text-align: left;
+  text-transform: capitalize;
+  width: 210px;
+  display: inline-block;
+  font-family: serif;
+  letter-spacing: 10px;
+}
+.hero-btn{
+  background: rgb(11, 68, 35);
+  color: white;
+  padding: 5px;
+  width: 60%;
+  position: absolute;
+  bottom: 5%;
+  left: 20%;
+  cursor: pointer;
+  font-family: 'Abel', sans-serif;
+  font-size: 25px;
+  outline: none;
+  z-index: 5;
+}
+.hero-btn:hover{
+  background: rgba(255,255,255,0.8);
+  transition: all 0.4s ease;
+  color: black;
+}
+.hero-btn::after{
+  content: "";
+  display: block;
+  border:25px solid rgb(11, 68, 35);
+  position: absolute;
+  top: -5px;
+  border-radius: 50%;
+  left: -35px;
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+.hero-btn:hover::after{
+  border-color:rgb(209,209,209);
+  cursor: pointer;
+  left: 92%;
+  transition: all 0.5s ease;
+}
+@keyframes load{
+  0%{left: -100vw;}
+  20%{left: -50vw;box-shadow: 0px 0px 20px rgb(255, 255, 255)}
+  60%{box-shadow: 0px 0px 20px rgb(255, 255, 255)}
+}
+@keyframes load1{
+  0%{left: -150vw;}
+  20%{left: -10vw;box-shadow: 0px 0px 20px rgb(255, 255, 255)}
+  60%{box-shadow: 0px 0px 20px rgb(255, 255, 255)}
+}
+
+/*-----------------------------------
+            HERO STATS
+-----------------------------------*/
+.hero-stats{
+  width: 100%;
+  z-index: 4;
+  text-align: center;
+}
+.hero-charts>div{
+  width: 170px;
+  height: 170px;
+  border: 15px solid rgba(75, 75, 75, 0.5);
+  border-top: 15px solid transparent;
+  display: inline-block;
+  border-radius: 50%;
+  font-size: 1.1em;
+  padding: 20px;
+  padding-top: 10px;
+  margin-top: 10px;
+  max-width: 100%;
+  text-transform: uppercase;
+  transition: all 1s ease;
+}
+.hero-charts span{
+  display: inline-block;
+  position: relative;
+  margin-top: 20px;
+  font-size: 2.2em;
+}
+.hero-charts span::after{
+  content: "%";
+  font-size: 0.5em;
+}
+.hero-stats button{
+	color: white;
+	background: rgb(11, 68, 35);
+	font-size: 1.2em;
+	padding: 5px 30px;
+}
+
+
+
+/*-----------------------------------
+            HERO FORM
+-----------------------------------*/
+.form-cont{
+  position: relative;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 10vh;
+  font-family: 'Abel', sans-serif;
+}
+.form-cont>div{
+  background: rgba(255, 255, 255, 0.089);
+  position: relative;
+  height: 70%;
+  text-align: center;
+  padding-top: 40px;
+}
+.form-cont>div>a{
+  display: inline-block;
+  padding: 20px;
+  background: rgb(23, 43, 23);
+  color: white;
+  width: 70%;
+  left: 15%;
+}
+
+.form{
+  position: relative;
+  z-index: 3;
+  width: 500px;
+  margin-top: 15vh;
+
+}
+.form>h1{
+  color: white;
+  font-size: 2.3em;
+}
+.form>input[type=text],
+.form>input[type=number]{
+  background: none;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  outline: none;
+  display: block;
+  animation: formLd 1.2s linear 1;
+  font-size: 1em;
+}
+.form>input[type=text]:nth-child(even){
+	animation: formLd 0.8s linear 1;
+}
+@keyframes formLd{
+	0%{width: 0%;border-color: green;box-shadow: 0px 2px 2px rgba(255,255,255,0.3);}
+	100%{border-color: orange;box-shadow: 0px 2px 2px rgba(255,255,255,0.3);}
+}
+
+.form input[type=submit]{
+  margin-top: 10px;
+  background: rgb(17, 54, 17);
+  width: 100%;
+  padding: 5px;
+  color: white;
+  font-size: 20px
+}
+::placeholder{
+  color: rgb(124, 122, 122);
+}
+
+/*-----------------------------------
+           SUCCESS
+-----------------------------------*/
+.success{
+  position: absolute;
+  padding: 20px;
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.5);
+  width: 70%;
+  min-height: 100px;
+  margin-top: 20vh;
+  transform: all 2s ease;
+  text-align: center;
+  animation: successColor 1s linear 1;
+}
+.success h3 span{
+  color: rgb(123, 255, 0);
+}
+@keyframes successColor{
+  0%{
+    background: rgb(22, 54, 0);
+    color: rgb(22, 54, 0);
+  }
+  90%{
+    background: rgb(22, 54, 0);
+    color: rgb(22, 54, 0);
+  }
+}
+.success::after,
+.success::before{
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: 0px;
+  border: 5px solid rgb(25, 59, 25);
+  height: 100%;
+  animation: success 0.7s linear 1;
+}
+.success::before{
+  right: 100%;
+  animation: success1 0.7s linear 1;
+}
+@keyframes success{
+  0%{right: 100%;transform: rotate(270deg);}
+}
+@keyframes success1{
+  0%{right: 0px;transform: rotate(-270deg);}
+}
+
+/*--------------------------------------
+				HEROES
+---------------------------------------*/
+.heroes{
+  z-index: 4;
+  font-family: 'Abel', sans-serif;
+  text-align: center;
+  width: 100%;
+}
+.heroes>div:nth-child(even) {
+  background: rgba(0, 0, 0, 0.5);
+}
+.heroes>div:nth-child(odd) img {
+  background: rgb(0, 0, 0);
+}
+.hero-item{
+  width: 500px;
+  max-width: 90%;
+  margin: 2% 3%;
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  padding: 10px;
+  padding: 10px;
+  padding-left: 60px;
+  box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.068);
+  background: rgba(9, 22, 9,0.5);
+  border-radius: 5px;
+}
+.hero-item img{
+position: absolute;
+  height: 70px;
+  background: rgb(9, 22, 13);
+  display: block;
+  padding: 5px 13px;
+  left: -20px;
+  border-radius: 5px;
+  z-index: 4;
+  animation: hero 1s linear 1;
+}
+.hero-item a{
+	background: rgb(6, 70, 6);
+	padding: 3px 20px;
+}
+@keyframes hero{
+  0%{left: -200px;}
+  20%{left: -200px;}
+  50%{left: -100px;}
+  65%{
+    left: -20px;
+    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+  }
+}
+.hero-item button{
+  background: rgb(6, 70, 6);
+  padding: 5px 20px;
+  position: relative;
+  right: -20%;
+  color: white;
+}
+
+/*--------------------------------------------
+            SQUAD CONTAINER
+---------------------------------------------*/
+.squad{
+  z-index: 4;
+  position: relative;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.253);
+  justify-content: space-around;
+  text-align: center;
+  flex-wrap: wrap;
+  font-family: 'Abel', sans-serif;
+  font-size: 0.9em;
+}
+#newMember{
+  width: 100%;
+  position: absolute;
+	overflow: auto;
+  left: -100%;
+  height: 85vh;
+  background: rgb(0, 0, 0);
+  z-index: 1000;
+  text-align: center;
+}
+#newMember>p{
+  text-align: right;
+  position: absolute;
+  right: 20px;
+  font-size: 35px;
+  color: red;
+  cursor: pointer;
+}
+.squad>div:nth-child(even){
+	animation: load 1s linear 1;
+}
+.squad-cont{
+  position: relative;
+  display: inline-block;
+  color: white;
+  width: 500px;
+  max-width: 90%;
+  margin: 1% 2.5%;
+  padding: 20px;
+  background: rgb(2, 2, 2);
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-align: left;
+  transition: all 2s ease;
+  animation: load1 0.5s linear 1;
+}
+.add-btn{
+  background: green;
+  display: inline-block;
+  position: absolute;
+  right: 5%;
+  top: 10%;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+.member-cont{
+  /* background: rgba(255, 255, 255, 0.103); */
+  padding: 10px;
+  border-bottom: 1px solid;
+}
+.member-cont h3{
+  display: inline-block;
+}
+.member-cont .btns{
+  position: relative;
+  left: 15%;
+  padding: 2px 20px;
+}
+
+@media only screen and (max-width: 700px){
+	.hero-img{
+		width: 100%;
+	}
+
+	.hero-desc{
+		width: 90%;
+		margin: 0px;
+		margin-top: -50%;
+	}
+
+}

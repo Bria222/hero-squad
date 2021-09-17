@@ -1,0 +1,14 @@
+{{#partial "content"}}
+    <section class="landing-pg">
+        <div class="land-left"></div>
+        <div class="land-right"></div>
+        <form class="form" action="/squad/new" method="post">
+            <h1>Create Your Squad</h1>
+            <input type="text" placeholder="Enter the squad name" name="squadName" required>
+            <input type="number" placeholder="Enter the max size" name="size" required>
+            <input type="text" placeholder="Enter mission" name="cause" required>
+            <input type="submit" class="btns">
+        </form>
+    </section>
+{{/partial}}
+{{> layout.hbs}}

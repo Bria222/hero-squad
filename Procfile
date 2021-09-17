@@ -1,0 +1,1 @@
+web: ./build/install/techspaceke-hero-squad/bin/techspaceke-hero-squad

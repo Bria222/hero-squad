@@ -1,0 +1,16 @@
+{{#partial "content"}}
+    <section class="landing-pg">
+        <div class="land-left"></div>
+        <div class="land-right"></div>
+        <form class="form" action="/new/hero" method="post">
+            <h1>Create Your Hero</h1>
+            <input type="text" placeholder="Enter your hero's name" name="name" required>
+            <input type="number" placeholder="Enter your hero's age" name="age" required>
+            <input type="text" placeholder="Enter your hero's special powers" name="power" required>
+            <input type="text" placeholder="Enter your hero's weakness" name="weakness" required>
+
+            <input class="btns" type="submit">
+        </form>
+    </section>
+{{/partial}}
+{{> layout.hbs}}
